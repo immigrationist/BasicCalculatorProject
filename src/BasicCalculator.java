@@ -13,19 +13,13 @@ public class BasicCalculator {
             return number;
         }
 
-    public static boolean validateArithOper(int num1, int num2,
-                                            char oper  )
-    {
-        //This subroutine receives as input two integers and
-        //an operation and returns false if the operation is
-        //invalid or if we are trying to divide by 0 or true
-        //otherwise
+    public static boolean validateArithOper(int num1, int num2, char oper){
         boolean valid = true;
 
         if (oper != '+' && oper != '-' && oper != 'x'
                 && oper != '/')
             valid = false;
-
+            
         if (oper == '/' && num2 == 0)
             valid = false;
 
@@ -33,14 +27,7 @@ public class BasicCalculator {
 
     }
 
-    public static double performArithOper(int num1, int num2,
-                                          char oper  )
-    {
-        //This subroutine receives as input two integers and
-        //a character, performs the operation represented by
-        //the character and then returns the result to the
-        //calling program/subprogram
-
+    public static double performArithOper(int num1, int num2, char oper){
         double result = 0.0;
 
         if ( oper == '+')
@@ -55,14 +42,14 @@ public class BasicCalculator {
         return result;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         int number1;
         int number2;
         char operation;
         double result = 0.0;
         char answer = 'y';
 
-        while(answer == 'y') {
+        while(answer == 'y'){
             try {
                 System.out.println("Enter first number");
                 number1 = readNumber();
@@ -85,7 +72,7 @@ public class BasicCalculator {
                 answer = (char)System.in.read();
                 System.in.read();
 
-            } catch (Exception e) {
+            } catch (Exception e){
                 System.out.println("Keyboard malfunctioned");
             }
         }
